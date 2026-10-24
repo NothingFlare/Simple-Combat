@@ -1,0 +1,37 @@
+# MIT License
+#
+# Copyright (c) 2026 NothingFlare
+#
+# Permission is hereby granted, free of charge, to any person obtaining a copy
+# of this software and associated documentation files (the "Software"), to deal
+# in the Software without restriction, including without limitation the rights
+# to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+# copies of the Software, and to permit persons to whom the Software is
+# furnished to do so, subject to the following conditions:
+#
+# The above copyright notice and this permission notice shall be included in all
+# copies or substantial portions of the Software.
+#
+# THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+# IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+# FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+# AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+# LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+# OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+# SOFTWARE.
+
+prefix: "&8[&cSimple Combat&8] &r"
+bossbar_title: "&c⚔ 전투 중: &f{time}s"
+combat_tagged: "&c&e{opponent}&c 님과의 전투가 시작되었습니다! &f{time}&c초 동안 게임을 종료하지 마십시오."
+combat_ended: "&a전투 상태에서 벗어났습니다!"
+command_blocked: "&c전투 중에는 이 명령어를 사용할 수 없습니다!"
+teleport_blocked: "&c전투 중에는 순간이동을 할 수 없습니다!"
+quit_punished: "&c{player} 님이 전투 중 탈주를 시도하여 처치되었습니다!"
+combat_status_in_combat: "&c현재 전투 상태입니다! 남은 시간: &f{time}초."
+combat_status_not_in_combat: "&a전투 중이 아닙니다."
+admin_reload: "&a설정 및 언어 파일이 성공적으로 다시 로드되었습니다!"
+admin_tag: "&e{player} &a플레이어를 &e{time}&a초 동안 전투 상태로 지정했습니다."
+admin_untag: "&e{player} &a플레이어의 전투 상태를 해제했습니다."
+no_permission: "&c이 명령어를 실행할 권한이 없습니다!"
+player_not_found: "&c플레이어를 찾을 수 없거나 오프라인 상태입니다!"
+only_players: "&c이 명령어는 플레이어만 사용할 수 있습니다!"
