@@ -1,0 +1,37 @@
+# MIT License
+#
+# Copyright (c) 2026 NothingFlare
+#
+# Permission is hereby granted, free of charge, to any person obtaining a copy
+# of this software and associated documentation files (the "Software"), to deal
+# in the Software without restriction, including without limitation the rights
+# to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+# copies of the Software, and to permit persons to whom the Software is
+# furnished to do so, subject to the following conditions:
+#
+# The above copyright notice and this permission notice shall be included in all
+# copies or substantial portions of the Software.
+#
+# THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+# IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+# FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+# AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+# LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+# OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+# SOFTWARE.
+
+prefix: "&8[&cSimple Combat&8] &r"
+bossbar_title: "&c⚔ Simple Combat: &f{time}s"
+combat_tagged: "&cYou have engaged in combat with &e{opponent}&c! Do not log out for &f{time}s."
+combat_ended: "&aYou are no longer in combat!"
+command_blocked: "&cYou cannot use this command while in combat!"
+teleport_blocked: "&cTeleportation is disabled while in combat!"
+quit_punished: "&c{player} tried to flee from combat and was killed!"
+combat_status_in_combat: "&cYou are currently in combat! Time remaining: &f{time}s."
+combat_status_not_in_combat: "&aYou are not in combat."
+admin_reload: "&aConfiguration and language files successfully reloaded!"
+admin_tag: "&aPlayer &e{player} &ahas been tagged into combat for &e{time} &aseconds."
+admin_untag: "&aCombat tag removed from player &e{player}&a."
+no_permission: "&cYou do not have permission to execute this command!"
+player_not_found: "&cPlayer not found or offline!"
+only_players: "&cThis command can only be executed by players!"
