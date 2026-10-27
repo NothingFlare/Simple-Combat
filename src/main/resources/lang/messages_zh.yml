@@ -1,0 +1,37 @@
+# MIT License
+#
+# Copyright (c) 2026 NothingFlare
+#
+# Permission is hereby granted, free of charge, to any person obtaining a copy
+# of this software and associated documentation files (the "Software"), to deal
+# in the Software without restriction, including without limitation the rights
+# to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+# copies of the Software, and to permit persons to whom the Software is
+# furnished to do so, subject to the following conditions:
+#
+# The above copyright notice and this permission notice shall be included in all
+# copies or substantial portions of the Software.
+#
+# THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+# IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+# FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+# AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+# LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+# OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+# SOFTWARE.
+
+prefix: "&8[&cSimple Combat&8] &r"
+bossbar_title: "&c⚔ 战斗中: &f{time}s"
+combat_tagged: "&c你已进入与 &e{opponent} &c的战斗！请在 &f{time} &c秒内不要退出游戏。"
+combat_ended: "&a你已脱离战斗！"
+command_blocked: "&c战斗状态下无法使用此命令！"
+teleport_blocked: "&c战斗状态下禁止传送！"
+quit_punished: "&c{player} 试图在战斗中逃跑，已被处决！"
+combat_status_in_combat: "&c你目前处于战斗状态！剩余时间: &f{time}s。"
+combat_status_not_in_combat: "&a你不在战斗状态。"
+admin_reload: "&a配置和语言文件已成功重新加载！"
+admin_tag: "&a玩家 &e{player} &a已被强制进入战斗状态 &e{time} &a秒。"
+admin_untag: "&a已解除玩家 &e{player} &a的战斗状态。"
+no_permission: "&c你没有执行此命令的权限！"
+player_not_found: "&c未找到玩家或玩家离线！"
+only_players: "&c该命令只能由玩家执行！"

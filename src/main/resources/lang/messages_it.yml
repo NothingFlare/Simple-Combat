@@ -1,0 +1,37 @@
+# MIT License
+#
+# Copyright (c) 2026 NothingFlare
+#
+# Permission is hereby granted, free of charge, to any person obtaining a copy
+# of this software and associated documentation files (the "Software"), to deal
+# in the Software without restriction, including without limitation the rights
+# to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+# copies of the Software, and to permit persons to whom the Software is
+# furnished to do so, subject to the following conditions:
+#
+# The above copyright notice and this permission notice shall be included in all
+# copies or substantial portions of the Software.
+#
+# THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+# IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+# FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+# AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+# LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+# OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+# SOFTWARE.
+
+prefix: "&8[&cSimple Combat&8] &r"
+bossbar_title: "&c⚔ Combattimento: &f{time}s"
+combat_tagged: "&cSei entrato in combattimento con &e{opponent}&c! Non disconnetterti per &f{time}s."
+combat_ended: "&aSei uscito dal combattimento!"
+command_blocked: "&cNon puoi usare questo comando mentre sei in combattimento!"
+teleport_blocked: "&cIl teletrasporto è disattivato durante il combattimento!"
+quit_punished: "&c{player} ha tentato di fuggire dal combattimento ed è stato ucciso!"
+combat_status_in_combat: "&cSei attualmente in combattimento! Tempo rimasto: &f{time}s."
+combat_status_not_in_combat: "&aNon sei in combattimento."
+admin_reload: "&aConfigurazione e file di lingua ricaricati con successo!"
+admin_tag: "&aIl giocatore &e{player} &aè stato messo in combattimento per &e{time} &asecondi."
+admin_untag: "&aStato di combattimento rimosso dal giocatore &e{player}&a."
+no_permission: "&cNon hai i permessi per eseguire questo comando!"
+player_not_found: "&cGiocatore non trovato o non in linea!"
+only_players: "&cQuesto comando può essere eseguito solo dai giocatori!"
