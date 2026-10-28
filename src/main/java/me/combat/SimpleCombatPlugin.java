@@ -83,6 +83,11 @@ public class SimpleCombatPlugin extends JavaPlugin {
 
         // Print startup banner
         printBanner(false);
+
+        // Check for updates
+        if (configManager.isCheckUpdates()) {
+            new me.combat.update.UpdateChecker(this).checkAsync();
+        }
     }
 
     private void warmup() {
@@ -94,6 +99,7 @@ public class SimpleCombatPlugin extends JavaPlugin {
             Class.forName(me.combat.version.BossBarDisplayAdapter.class.getName());
             Class.forName(me.combat.version.ActionBarDisplayAdapter.class.getName());
             Class.forName(me.combat.util.ColorUtil.class.getName());
+            Class.forName(me.combat.update.UpdateChecker.class.getName());
 
             // Прогрев шаблонов форматирования строк
             languageManager.getBossBarTitle(20, "Player");
@@ -130,6 +136,9 @@ public class SimpleCombatPlugin extends JavaPlugin {
             configManager.load();
             languageManager.load();
             printBanner(true);
+            if (configManager.isCheckUpdates()) {
+                new me.combat.update.UpdateChecker(this).checkAsync();
+            }
             if (onComplete != null) {
                 ServerScheduler.runGlobal(this, onComplete);
             }

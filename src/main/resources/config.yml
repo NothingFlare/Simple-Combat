@@ -28,6 +28,9 @@
 # Supported: en, ru, zh, de, fr, es, pt, ja, uk, it, pl, tr, ko
 language: "ru"
 
+# Check for plugin updates on startup / Проверять наличие обновлений при запуске
+check-updates: true
+
 # Combat duration in seconds / Длительность боя в секундах
 combat-seconds: 20
 

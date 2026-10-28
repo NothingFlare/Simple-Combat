@@ -49,6 +49,7 @@ public class ConfigManager {
     private boolean removeCombatOnDeath;
     private boolean blockTeleport;
     private boolean disableFlight;
+    private boolean checkUpdates;
     private boolean enableBypass;
     private boolean tagCreative;
     private boolean excludedWorldsEnabled;
@@ -90,6 +91,7 @@ public class ConfigManager {
         this.removeCombatOnDeath = plugin.getConfig().getBoolean("remove-combat-on-death", true);
         this.blockTeleport = plugin.getConfig().getBoolean("block-teleport", true);
         this.disableFlight = plugin.getConfig().getBoolean("disable-flight", true);
+        this.checkUpdates = plugin.getConfig().getBoolean("check-updates", true);
         this.enableBypass = plugin.getConfig().getBoolean("enable-bypass", false);
         this.tagCreative = plugin.getConfig().getBoolean("tag-creative", false);
 
@@ -216,6 +218,10 @@ public class ConfigManager {
 
     public boolean isTagCreative() {
         return tagCreative;
+    }
+
+    public boolean isCheckUpdates() {
+        return checkUpdates;
     }
 
     public boolean isExcludedWorldsEnabled() {
