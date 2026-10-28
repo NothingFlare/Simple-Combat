@@ -21,11 +21,11 @@
 # SOFTWARE.
 
 name: SimpleCombat
-version: 1.5
+version: 1.6
 main: me.combat.SimpleCombatPlugin
 api-version: '1.13'
 folia-supported: true
-author: NothingFlare
+author: styuk
 description: Universal Simple Combat Tagging Plugin with Multi-Language BossBar and Anti-Relog
 
 commands:

@@ -54,7 +54,7 @@ remove-combat-on-death: true
 # Block ender pearl and chorus fruit teleports during combat / Блокировать телепортацию жемчугом/хорусом
 block-teleport: true
 
-# Disable flight when entering combat / Отключать полет при входе в бой
+# Disable flight and elytra gliding when entering combat / Отключать полет и элитры при входе в бой
 disable-flight: true
 
 # Enable bypass permission 'combat.bypass' / Включить право на обход боя (combat.bypass)

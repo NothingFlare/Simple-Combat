@@ -1,11 +1,5 @@
-# MIT License
-#
-# Copyright (c) 2026 NothingFlare
-
 target/
 *.class
-*.jar
 .idea/
 *.iml
 .vscode/
-.DS_Store

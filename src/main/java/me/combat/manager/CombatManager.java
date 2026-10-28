@@ -80,15 +80,19 @@ public class CombatManager {
             }
         }
 
-        // Оптимизация отключения полета: проверяем права и отправляем пакет способностей
-        // ТОЛЬКО если игрок действительно летит или у него включен allowFlight (для 99.9% игроков в выживании это false)
-        if (plugin.getConfigManager().isDisableFlight() && (player.isFlying() || player.getAllowFlight())) {
+        // Отключение полета и планирования на элитрах
+        if (plugin.getConfigManager().isDisableFlight()) {
             if (!player.hasPermission("simplecombat.bypass.flight") &&
                     !player.hasPermission("combat.bypass.flight")) {
-                if (player.isFlying()) {
-                    player.setFlying(false);
+                if (player.isFlying() || player.getAllowFlight()) {
+                    if (player.isFlying()) {
+                        player.setFlying(false);
+                    }
+                    player.setAllowFlight(false);
                 }
-                player.setAllowFlight(false);
+                if (me.combat.version.ServerVersion.isAtLeast(9) && player.isGliding()) {
+                    player.setGliding(false);
+                }
             }
         }
 
@@ -168,6 +172,24 @@ public class CombatManager {
                     displayManager.remove(player, session);
                 });
                 continue;
+            }
+
+            // Периодический контроль запрета полета и элитр во время боя
+            if (plugin.getConfigManager().isDisableFlight()) {
+                if (!player.hasPermission("simplecombat.bypass.flight") &&
+                        !player.hasPermission("combat.bypass.flight")) {
+                    if (player.isFlying() || (me.combat.version.ServerVersion.isAtLeast(9) && player.isGliding())) {
+                        ServerScheduler.runOnPlayer(plugin, player, () -> {
+                            if (player.isFlying()) {
+                                player.setFlying(false);
+                                player.setAllowFlight(false);
+                            }
+                            if (me.combat.version.ServerVersion.isAtLeast(9) && player.isGliding()) {
+                                player.setGliding(false);
+                            }
+                        });
+                    }
+                }
             }
 
             int newTime = session.getTimeLeft() - 1;

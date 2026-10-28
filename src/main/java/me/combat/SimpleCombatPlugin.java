@@ -60,6 +60,11 @@ public class SimpleCombatPlugin extends JavaPlugin {
         // Register event listener
         Bukkit.getPluginManager().registerEvents(new CombatListener(this), this);
 
+        // Register 1.9+ Elytra, fireworks and modern flight restrictions
+        if (me.combat.version.ServerVersion.isAtLeast(9)) {
+            Bukkit.getPluginManager().registerEvents(new me.combat.listener.ModernFlightListener(this), this);
+        }
+
         // Register command
         CombatCommand combatCommand = new CombatCommand(this);
         PluginCommand cmd = getCommand("simplecombat");
