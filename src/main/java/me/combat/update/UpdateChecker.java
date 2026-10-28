@@ -24,7 +24,6 @@
 
 package me.combat.update;
 
-import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
@@ -42,10 +41,7 @@ import java.util.logging.Logger;
 public class UpdateChecker {
 
     public static final String GITHUB_RELEASES_URL = "https://github.com/NothingFlare/Simple-Combat/releases";
-    public static final String MODRINTH_VERSIONS_URL = "https://modrinth.com/plugin/simple-combat/versions";
-
     private static final String GITHUB_API = "https://api.github.com/repos/NothingFlare/Simple-Combat/releases/latest";
-    private static final String MODRINTH_API = "https://api.modrinth.com/v2/project/simple-combat/version";
 
     private final SimpleCombatPlugin plugin;
     private final String currentVersion;
@@ -67,7 +63,7 @@ public class UpdateChecker {
     }
 
     /**
-     * Запускает асинхронную проверку обновлений через API GitHub и Modrinth.
+     * Запускает асинхронную проверку обновлений через GitHub API.
      */
     public void checkAsync() {
         if (plugin != null) {
@@ -88,7 +84,7 @@ public class UpdateChecker {
             String remoteVersion = fetchLatestVersion();
 
             if (remoteVersion == null || remoteVersion.trim().isEmpty()) {
-                String failMsg = getMessage("updates_fail", "[SimpleCombat] Could not retrieve the latest version from GitHub/Modrinth API.");
+                String failMsg = getMessage("updates_fail", "[SimpleCombat] Could not retrieve the latest version from GitHub API.");
                 logger.warning(failMsg);
                 return;
             }
@@ -100,8 +96,7 @@ public class UpdateChecker {
                 logger.warning(availMsg);
                 String dlMsg = getMessage("updates_download", "[SimpleCombat] Download the update at:");
                 logger.warning(dlMsg);
-                logger.warning("[SimpleCombat]   GitHub:   " + GITHUB_RELEASES_URL);
-                logger.warning("[SimpleCombat]   Modrinth: " + MODRINTH_VERSIONS_URL);
+                logger.warning("[SimpleCombat]   GitHub: " + GITHUB_RELEASES_URL);
                 logger.warning("****************************************************************");
             } else {
                 String latestMsg = getUpdateLatestMessage(currentVersion);
@@ -114,12 +109,7 @@ public class UpdateChecker {
     }
 
     public String fetchLatestVersion() {
-        String fromGitHub = fetchFromGitHub();
-        if (fromGitHub != null && !fromGitHub.trim().isEmpty()) {
-            return fromGitHub;
-        }
-
-        return fetchFromModrinth();
+        return fetchFromGitHub();
     }
 
     private String fetchFromGitHub() {
@@ -140,40 +130,6 @@ public class UpdateChecker {
                         JsonObject obj = root.getAsJsonObject();
                         if (obj.has("tag_name")) {
                             return obj.get("tag_name").getAsString().trim();
-                        }
-                    }
-                }
-            }
-        } catch (Exception ignored) {
-        } finally {
-            if (conn != null) {
-                conn.disconnect();
-            }
-        }
-        return null;
-    }
-
-    private String fetchFromModrinth() {
-        HttpURLConnection conn = null;
-        try {
-            URL url = new URL(MODRINTH_API);
-            conn = (HttpURLConnection) url.openConnection();
-            conn.setRequestMethod("GET");
-            conn.setRequestProperty("User-Agent", "NothingFlare/Simple-Combat/" + currentVersion);
-            conn.setRequestProperty("Accept", "application/json");
-            conn.setConnectTimeout(5000);
-            conn.setReadTimeout(5000);
-
-            if (conn.getResponseCode() == 200) {
-                try (BufferedReader reader = new BufferedReader(new InputStreamReader(conn.getInputStream(), StandardCharsets.UTF_8))) {
-                    JsonElement root = new JsonParser().parse(reader);
-                    if (root != null && root.isJsonArray()) {
-                        JsonArray array = root.getAsJsonArray();
-                        if (array.size() > 0) {
-                            JsonObject latest = array.get(0).getAsJsonObject();
-                            if (latest.has("version_number")) {
-                                return latest.get("version_number").getAsString().trim();
-                            }
                         }
                     }
                 }
